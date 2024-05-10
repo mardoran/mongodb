@@ -5,7 +5,7 @@ import string
 def escribir_ocurrencias():
     # Recorremos cada línea de la entrada
     for linea in sys.stdin:
-        # evitamos los retornos de carro
+        # evitamos las líneas en blanco
         if linea.isspace():
            continue
         else:
