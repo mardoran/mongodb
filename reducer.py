@@ -1,29 +1,28 @@
 import sys
 
 contador = 0
-letra_anterior = None
+mac_anterior = None
 for linea in sys.stdin:
-    linea = linea.strip()
     lista = linea.split("\t")
-    letra = lista[0]
+    mac = lista[0]
     #lo siguiente no es necesario porque sabemos que siempre va a ser 1
     #recuento = lista[1]
-    #letra, recuento = linea.split("\t")
+    #mac, recuento = linea.split("\t")
 
-    #si la variable letra_anterior es nula estamos en primera línea del bucle así que la inicializamos
-    #con la primera letra
-    if letra_anterior == None:
-        letra_anterior = letra
-    #si la letra es igual a la anterior vamos sumando
-    if letra == letra_anterior:
+    #si la variable mac_anterior es nula estamos en primera línea del bucle así que la inicializamos
+    #con la primera mac
+    if mac_anterior == None:
+        mac_anterior = mac
+    #si la mac es igual a la anterior vamos sumando
+    if mac == mac_anterior:
         contador += 1
-    #como el archivo está ordenado cuando no sea igual es que cambiamos de letra
+    #como el archivo está ordenado cuando no sea igual es que cambiamos de mac
     #así que imprimimos el recuento total
     else:
-        print(letra_anterior, contador, sep="\t")
-        #como ya hemos leído una nueva letra la guardamos en la variable letra_anterior para comparar
+        print(mac_anterior, contador, sep="\t")
+        #como ya hemos leído una nueva mac la guardamos en la variable mac_anterior para comparar
         #y inicializamos el contador a 1 porque ya hemos leído una ocurrencia
-        letra_anterior = letra
+        mac_anterior = mac
         contador = 1
-#si se acaba el bucle es que habremos llegado a la última fila y tenemos que mostrar la última letra
-print(letra_anterior, contador, sep="\t")
+#si se acaba el bucle es que habremos llegado a la última fila y tenemos que mostrar la última mac
+print(mac_anterior, contador, sep="\t")
