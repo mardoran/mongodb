@@ -9,10 +9,11 @@ def escribir_ocurrencias():
         if linea.isspace():
            continue
         else:
+            #si la línea comienza por Direc (esquivamos el acento para ahorranos problemas)
             if linea.startswith("Direc"):
+                #cogemos la parte de la mac
                 mac = linea.split()[1]
-
-                # recorremos cada línea cogiendo cada carácter
+                # escribimos la mac y 1 por cada ocurrencia
                 print (mac,  1, sep="\t")
 
 if __name__ == "__main__":
